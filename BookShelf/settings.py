@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Accounts.apps.AccountsConfig',
+    'Category.apps.CategoryConfig',
     'Home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'BookShelf.wsgi.application'
 
+AUTH_USER_MODEL = 'Accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
