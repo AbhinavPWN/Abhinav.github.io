@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'Accounts.apps.AccountsConfig',
     'Category.apps.CategoryConfig',
     'Home.apps.HomeConfig',
+    'Store.apps.StoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +80,12 @@ AUTH_USER_MODEL = 'Accounts.Account'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Web',
+        'USER': 'postgres',
+        'PASSWORD': 'abhikarki',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -125,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configuring media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media'
